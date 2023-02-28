@@ -1,0 +1,48 @@
+@import '../../styles/vars';
+
+.Stretch {
+
+    & .stretch-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3em;
+        padding: 0 8em;
+
+        & .stretch-ilustration-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 600px;
+            height: 600px;
+            border-radius: 57px;
+            background: rgb(219, 224, 231);
+            background: linear-gradient(90deg, rgba(219, 224, 231, 1) 0%, rgba(189, 194, 204, 1) 100%);
+            overflow: hidden;
+            
+            & .stretch-illustration {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 880px;
+                height: 880px;
+            }
+        }
+
+        & .stretch-infos {
+            margin-left: 4em;
+            width: 40%;
+            
+            & h1 {
+                width: 90%;
+                line-height: 1.3em;
+                font-size: 4rem;
+            }
+
+            & p {
+                margin-top: -1em;
+                width: 85%;
+            }
+        }
+    }
+}
