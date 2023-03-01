@@ -89,12 +89,19 @@ const Navbar = ({ isLogged, onLogout }) => {
 
     return (
         <div className="Navbar">
-            <MediaQuery minWidth={481}>
-                {desktopNav()}
+            {/* Mobile */}
+            <MediaQuery minWidth={320} maxWidth={480}>
+                {mobileNav()}
             </MediaQuery>
 
-            <MediaQuery maxWidth={480}>
+            {/* Tablets */}
+            <MediaQuery minWidth={481} maxWidth={768}>
                 {mobileNav()}
+            </MediaQuery>
+
+            {/* Small screens */}
+            <MediaQuery minWidth={769}>
+                {desktopNav()}
             </MediaQuery>
         </div>
     )

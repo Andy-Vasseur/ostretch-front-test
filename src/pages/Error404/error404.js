@@ -1,18 +1,17 @@
 import React from 'react';
-
-// Styles
 import './styles.scss';
-import Error from '../../assets/img/error.jpg';
 
 const Error404 = () => {
   return (
     <div className='ErrorPage'>
-      <h1>Erreur 404: Page non trouvée</h1>
-      <p>Désolé, la page que vous recherchez est introuvable.</p>
+      <div style={{ textAlign: "center" }}>
+        <h1>Erreur 404: Page non trouvée</h1>
+        <p>Désolé, la page que vous recherchez est introuvable.</p>
+      </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
-      <img src={Error} alt="Erreur 404" width= '700' />
+        <img src={`${process.env.PUBLIC_URL}/femme yoga error 404.jpg`} alt="Erreur 404" width= '700' />
+      </div>
     </div>
-  </div>
   );
 }
 

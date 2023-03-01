@@ -6,69 +6,73 @@ import { useState } from "react";
 import axios from 'axios';
 
 
-const Login = ({ onSubmitLoginForm }) => {
-  const navigate = useNavigate();
+const Login = ({onSubmitLoginForm}) => {
+const navigate = useNavigate();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const [email, setEmail] = useState('');
+const [password, setPassword]= useState('');
+// const [token, setToken] = useState('')
+const [error, setError] = useState(null);
 
 
-  const handleEmailChange = (event) => {
+const handleEmailChange = (event) => {
     setEmail(event.target.value)
-  }
-  const handlePasswordChange = (event) => {
+}
+const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e) =>{
     e.preventDefault();
     try {
-      // console.log(email)
-      const response = await axios.post('http://45.82.75.212:3001/login', {
+
+        const response = await axios.post('http://localhost:3001/login', {         
         email: email,
-        password: password
-      });
+        password: password });
+  
+        // Stocke le token dans le stockage local du navigateur
+        localStorage.setItem('token', response.data.token);
+  
+        // Effectue une requête Axios authentifiée ultérieure en incluant le token dans le header Authorization
+        const authenticatedRequest = await axios.get('http://localhost:3001/user/me', {
+          headers: { 'Authorization': 'Bearer ' + response.data.token }
+        });
+      
+        const userFound = authenticatedRequest.data.userFound;
+        onSubmitLoginForm(userFound);
+        navigate("/");
+        
+        // Traite la réponse de la requête authentifiée
+      } catch (error) {
+        console.error(error);
+        setError(true);
+      }
+}
 
-      // Stocke le token dans le stockage local du navigateur
-      localStorage.setItem('token', response.data.token);
 
-      // Effectue une requête Axios authentifiée ultérieure en incluant le token dans le header Authorization
-      const authenticatedRequest = await axios.get('http://45.82.75.212:3001/user/me', {
-        headers: { 'Authorization': 'Bearer ' + response.data.token }
-      });
+    return (
+<div className="login">
+        <div className="box-container">
+            <img src={logo}></img>
+            <h2>Se connecter</h2>
+            {
+            error ? <div className='error'> Mauvaise adresse email et/ou mot de passe </div> : null
+            }
+            <form className="form" onSubmit={handleSubmit}>
+                <div className="input-group">
+            <input type="email" name="email" placeholder="Email"value={email} onChange={handleEmailChange}/>
+            </div>
 
-      const userFound = authenticatedRequest.data.userFound;
-      onSubmitLoginForm(userFound);
-      navigate("/");
-
-      // Traite la réponse de la requête authentifiée
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-
-  return (
-    <div className="login">
-      <div className="box-container">
-        <img src={logo} alt="" />
-        <h2>Se connecter</h2>
-
-        <form className="form" onSubmit={handleSubmit}>
           <div className="input-group">
-            <input type="email" name="email" placeholder="Email" value={email} onChange={handleEmailChange} />
-          </div>
-
-          <div className="input-group">
-            <input type="password" name="password" placeholder="Mot de passe" value={password} onChange={handlePasswordChange} />
+            <input type="password" name="password" placeholder="Mot de passe" value={password} onChange={handlePasswordChange}/>
           </div>
           <button className="primary">Connexion</button>
           <p>Pas encore inscrit ?</p>
           <NavLink to="/signup" className="signup">Créer un compte</NavLink>
         </form>
-      </div>
+        </div>
     </div>
-  )
+    )
 }
 
 export default Login;

@@ -1,18 +1,30 @@
-import React from 'react';
+import { useState } from 'react';
 
 // Styles
+import Info from '../../components/Info';
+import InfoForm from '../../components/InfoForm';
 import './styles.scss'
 
-const MySpace = () => {
+const MySpace = ({user}) => {
+
+    const [isEditOpen, setIsEditOpen] = useState(false);
+
+    const onEdit = () => {
+        setIsEditOpen(true);
+    }
+
     return (
         <div className='MySpace'>
-
-            <div className="my-infos">
+            <div className="bienvenue">Bienvenue {user.username}</div>
+            <div className="box">
+                
                 <h2>Mes informations</h2>
-                <div className="inputs-left">
+                { isEditOpen ? <InfoForm user={user}/> : <Info user={user} handleEdit={onEdit} />}
+                
+                {/* <div className="inputs-left">
                     <input type="text"
-                        id='firstname'
-                        placeholder='Votre prénom...'
+                        id='username'
+                        placeholder={user.username}
                     />
 
                     <input type="text"
@@ -34,14 +46,15 @@ const MySpace = () => {
                 </div>
                 <button>
                     Modifier
-                </button>
+                </button> */}
+     
             </div>
-
-            <div className="my-favorites">
+            <div className="box">
+          
                 <h2>Mes favoris</h2>
-                <p> Lorem ipsum dolor sit amet consectetur. Enim pharetra mollis sed mauris. Varius dui nulla adipiscing elementum risus.Lorem ipsum dolor sit amet consectetur.</p>
+                <p className=''> Lorem ipsum dolor sit amet consectetur. Enim pharetra mollis sed mauris. Varius dui nulla adipiscing elementum risus.Lorem ipsum dolor sit amet consectetur.</p>
+    
             </div>
-
         </div>
     );
 };
