@@ -26,7 +26,7 @@ const handleSubmit = async (e) =>{
     e.preventDefault();
     try {
 
-        const response = await axios.post('http://localhost:3001/login', {         
+        const response = await axios.post('http://45.82.75.212:3001/login', {         
         email: email,
         password: password });
   
@@ -34,7 +34,7 @@ const handleSubmit = async (e) =>{
         localStorage.setItem('token', response.data.token);
   
         // Effectue une requête Axios authentifiée ultérieure en incluant le token dans le header Authorization
-        const authenticatedRequest = await axios.get('http://localhost:3001/user/me', {
+        const authenticatedRequest = await axios.get('http://45.82.75.212:3001/user/me', {
           headers: { 'Authorization': 'Bearer ' + response.data.token }
         });
       
@@ -53,7 +53,7 @@ const handleSubmit = async (e) =>{
     return (
 <div className="login">
         <div className="box-container">
-            <img src={logo}></img>
+            <img src={logo} alt="" />
             <h2>Se connecter</h2>
             {
             error ? <div className='error'> Mauvaise adresse email et/ou mot de passe </div> : null
