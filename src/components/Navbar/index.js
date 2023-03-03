@@ -80,7 +80,7 @@ const Navbar = ({ isLogged, onLogout }) => {
                         </li>
                     </Link>
                     {
-                        isLogged ? <FaRegUserCircle className='user' /> : <NavLink to="/login" className="login">Login</NavLink>
+                        isLogged ? <NavLink to ="/my-space" className='user'>Mon espace</NavLink> : <NavLink to="/login" className="login">Login</NavLink>
                     }
                 </ul>
             </div>

@@ -3,45 +3,35 @@
 .Stretch {
 
     & .stretch-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 3em;
-        padding: 0 8em;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 27px;
+        grid-row-gap: 27px;
+        margin: auto;
+        margin-top: 2em;
+        width: 1200px;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
 
-        & .stretch-ilustration-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 600px;
-            height: 600px;
-            border-radius: 57px;
-            background: rgb(219, 224, 231);
-            background: linear-gradient(90deg, rgba(219, 224, 231, 1) 0%, rgba(189, 194, 204, 1) 100%);
-            overflow: hidden;
-            
-            & .stretch-illustration {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 880px;
-                height: 880px;
-            }
+        & img {
+            width: 500px;
+            height: 500px;
+            border-radius: 10%;
+            object-fit: cover;
         }
 
         & .stretch-infos {
-            margin-left: 4em;
-            width: 40%;
-            
-            & h1 {
-                width: 90%;
-                line-height: 1.3em;
-                font-size: 4rem;
-            }
+            text-align: left;
 
+            & h1 {
+                margin-bottom: -0.2em;
+            }
             & p {
-                margin-top: -1em;
-                width: 85%;
+                font-size: 1.1rem;
+                font-weight: 400;
+                font-style: italic;
             }
         }
     }

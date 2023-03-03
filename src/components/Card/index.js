@@ -9,8 +9,7 @@ const Card = (props) => {
 
     return (
         <div className="Card">
-            {/* <Link to={`/stretches/${props.link}`} className="card"> */}
-            <Link to={"/stretches/stretch"} className="card">
+            <Link to={`/stretches/${props.link}`} className="card">
                 <div className='card-content'>
                     <img
                         src={props.img}

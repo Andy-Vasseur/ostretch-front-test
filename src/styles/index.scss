@@ -60,6 +60,45 @@
         }
     }
 
+    .Stretch {
+        margin: 0;
+        padding: 0;
+
+        & .stretch-container {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            width: 500px;
+
+            & .stretch-image-container {
+                margin-top: 2em;
+                display: flex;
+                justify-content: flex-start;
+
+                & img {
+                    width: 273px;
+                    height: 273px;
+                }
+            }
+
+            & .stretch-infos {
+                margin: 0;
+                width: 55%;
+
+                & h1 {
+                    margin-top: -0.1em;
+                    margin-bottom: 1em;
+                    font-size: 1.5rem;
+                }
+
+                & p {
+                    background-color: red;
+                }
+            }
+        }
+    }
+
     .login {
         
         & .box-container {
@@ -71,23 +110,6 @@
 
             & .signup {
                 width: 80%;
-            }
-        }
-    }
-
-    .Stretch {
-        margin: 0;
-        padding: 0;
-
-        & .stretch-container {
-            flex-direction: column;
-            margin: 0;
-            padding: 0;
-
-            & .stretch-ilustration-container {
-                margin-top: 3em;
-                width: 300px;
-                height: 300px;
             }
         }
     }
@@ -295,7 +317,7 @@
                     margin-right: 3.3em;
                     justify-content: center;
                     align-items: center;
-                    width: 1050px;
+                    width: 900px;
                     grid-template-columns: repeat(3, 1fr);
                     grid-template-rows: 1fr;
 
