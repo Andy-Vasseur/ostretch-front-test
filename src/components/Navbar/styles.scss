@@ -101,19 +101,40 @@
   }
 }
 
-.home {
-  margin-right: 20px;
-  color: black;
-  outline: none;
-  text-decoration: none;
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  text-align: center;
+
+  & a {
+    color: black;
+    outline: none;
+    text-decoration: none;
+  }
 }
 
-.stretches {
-  padding-left: 20px;
-  color: black;
-  outline: none;
-  text-decoration: none;
-}
+// .home {
+//   margin-right: 20px;
+//   color: black;
+//   outline: none;
+//   text-decoration: none;
+// }
+
+// .stretches {
+//   padding-left: 20px;
+//   color: black;
+//   outline: none;
+//   text-decoration: none;
+// }
+
+// .contact {
+//   padding-left: 20px;
+//   color: black;
+//   outline: none;
+//   text-decoration: none;
+// }
 
 .login-profile {
   padding: 10px;

@@ -18,7 +18,7 @@ export default class Stretches extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://45.82.75.212:3001/stretches')
+        axios.get('http://localhost:3001/stretches')
             .then(response => {
                 let stretches = response.data;
                 this.setState({ stretches })
@@ -69,6 +69,7 @@ export default class Stretches extends Component {
                                             hover={stretch.title}
                                             key={stretch.id}
                                             link={stretch.id}
+                                            isLogged={this.props.isLogged}
                                         />
                                     ))
                                 }

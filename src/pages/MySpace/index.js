@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Bookmarks from '../../components/Bookmarks';
 
 // Styles
 import Info from '../../components/Info';
@@ -24,6 +25,7 @@ const MySpace = ({user, setUser}) => {
             </div>
             <div className="box">
                 <h2>Mes favoris</h2>
+                <Bookmarks />          
             </div>
         </div>
     );

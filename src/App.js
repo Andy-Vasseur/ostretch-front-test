@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import { useState } from 'react';
 import Error404 from './pages/Error404/error404';
 import MySpace from './pages/MySpace';
+import Formulaire from './pages/Contact/Formulaire';
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
   const handleLogin = (item) => {
     setUser(item);
     setIsLogged(true)
+    console.log('Connecté')
   }
   
 const handleLogout = () => {
@@ -30,12 +32,12 @@ const handleLogout = () => {
       <Navbar isLogged={isLogged} onLogout={handleLogout}/>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/stretches' element={<Stretches />} />
+        <Route path='/stretches' element={<Stretches isLogged={isLogged} />} />
         <Route path='/stretches/:id' element={<Stretch />} />
         <Route path='/login' element={<Login onSubmitLoginForm={handleLogin} />} />
         <Route path='/stretches/stretch' element={<Stretch />} />
-        <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/contact' element={<Formulaire />} />
         {
         user ? <Route path='/my-space' element={<MySpace user={user} setUser={setUser} />} /> : <Route path='/my-space' element={<Login />} />
         }
