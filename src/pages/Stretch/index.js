@@ -10,7 +10,7 @@ export default function Stretch() {
     const [stretch, setStretch] = useState({});
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/stretches/${id}`)
+        axios.get(`http://45.82.75.212:3001/stretches/${id}`)
             .then(response => {
                 setStretch(response.data)
             })
