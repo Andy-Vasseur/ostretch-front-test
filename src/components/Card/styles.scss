@@ -67,4 +67,24 @@
             }
         }
     }
+    & .favorite-icon {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: -125px;
+        right: 45px;
+        margin-left: 1em;
+        font-size: 1.8rem;
+        filter: drop-shadow(0 0 3px rgba(0, 0, 0, 1));
+        transition: color 300ms ease;
+
+        &:hover {
+            color: #7867B1;
+        }
+
+        & .filled-icon {
+            color: #7867B1;
+        }
+    }
 }

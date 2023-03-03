@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 import Home from './pages/Home';
 import Stretch from './pages/Stretch';
 import Stretches from './pages/Stretches';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Navbar from './components/Navbar';
-import { useState } from 'react';
 import Error404 from './pages/Error404/error404';
 import MySpace from './pages/MySpace';
 import Formulaire from './pages/Contact/Formulaire';

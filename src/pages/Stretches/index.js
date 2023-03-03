@@ -18,7 +18,7 @@ export default class Stretches extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://45.82.75.212:3001/stretches')
+        axios.get('http://localhost:3001/stretches')
             .then(response => {
                 let stretches = response.data;
                 this.setState({ stretches })
@@ -62,6 +62,7 @@ export default class Stretches extends Component {
                                 {
                                     filterData.map((stretch) => (
                                         <Card
+                                            id={stretch.id}
                                             title={stretch.title}
                                             description={stretch.description}
                                             img={stretch.main_image}

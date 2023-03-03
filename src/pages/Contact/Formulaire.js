@@ -1,75 +1,73 @@
 // Styles
+import axios from 'axios';
 import './formulaire.scss';
+import { useState, useRef } from 'react';
 
 const ContactForm = () => {
-    const contactForm = document.getElementById('form__contact')
-    let name = document.getElementById('name');
-    let email = document.getElementById('email');
-    let subject = document.getElementById('subject');
-    let message = document.getElementById('message');
+    const contactFormRef = useRef(null);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
 
-    console.log(contactForm, name, email, subject, message)
-
-    contactForm.addEventListener('submit', (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-    
+
         const formData = {
-            name: name.value,
-            email: email.value,
-            subject: subject.value,
-            message: message.value
-        }
-    
-        fetch('http://45.82.75.212:3001/contact', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-          })
-          .then(response => response.text())
-          .then(data => {
-            if (data === 'success') {
-              console.log("email send");
-              name.value = "";
-              email.value = "";
-              subject.value = "";
-              message.value = "";
-            } else {
-              alert("Something went wrong");
-            }
-          });
-    });
-}
+            name,
+            email,
+            subject,
+            message
+        };
+
+        axios.post('http://localhost:3001/contact', formData)
+            .then(response => response.data)
+            .then(data => {
+                if (data === 'success') {
+                    console.log("email sent");
+                    setName('');
+                    setEmail('');
+                    setSubject('');
+                    setMessage('');
+                } else {
+                    console.log("Something went wrong");
+                }
+            });
+    };
+
+    return (
+        <form ref={contactFormRef} className="form__contact" onSubmit={handleSubmit}>
+            <div>
+                <label htmlFor="name">Votre nom</label>
+                <input type="text" id="name" placeholder="Votre nom/prénom ici" value={name} onChange={event => setName(event.target.value)} />
+            </div>
+            <div>
+                <label htmlFor="email">Votre e-mail</label>
+                <input type="email" id="email" placeholder="Votreadresse@mail.com" value={email} onChange={event => setEmail(event.target.value)} />
+            </div>
+            <div>
+                <label htmlFor="subject">Motif de votre contact</label>
+                <input type="text" id="subject" placeholder="Sujet de votre message" value={subject} onChange={event => setSubject(event.target.value)} />
+            </div>
+            <div>
+                <label htmlFor="message">Votre message</label>
+                <textarea id="message" placeholder="Votre message" value={message} onChange={event => setMessage(event.target.value)}></textarea>
+            </div>
+            <div>
+                <button type="submit">Envoyer mon message</button>
+            </div>
+        </form>
+    );
+};
 
 const Formulaire = () => {
-    <ContactForm />
     return (
-        <div className="contactez-nous">
-            <h1>Contactez-nous ici.</h1>
-        
-            <form className="form__contact" id="form__contact">
-                <div>
-                    <label htmlFor="nom">Votre nom</label>
-                    <input type="text" id="name" placeholder="Votre nom/prénom ici" />
-                </div>
-                <div>
-                    <label htmlFor="email">Votre e-mail</label>
-                    <input type="email" id="email" placeholder="Votreadresse@mail.com" />
-                </div>
-                <div>
-                    <label htmlFor="email">Motif de votre contact</label>
-                    <input type="text" id="subject" placeholder="Sujet de votre message" />
-                </div>
-                <div>
-                    <label htmlFor="message">Votre message</label>
-                    <textarea id="message" placeholder="Votre message"></textarea>
-                </div>
-                <div>
-                    <button type="submit" value="Send Message">Envoyer mon message</button>
-                </div>
-            </form>
-        </div>
+        <>
+            <ContactForm />
+            <div className="contactez-nous">
+                <h1>Contactez-nous ici.</h1>
+            </div>
+        </>
     );
 };
 
