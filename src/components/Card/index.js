@@ -19,7 +19,7 @@ const Card = (props) => {
             headers: { Authorization: `Bearer ${token}` }
           };
           console.log(config);
-          axios.post(`http://localhost:3001/user/me/stretches/${props.id}`,{}, config)
+          axios.post(`http://45.82.75.212:3001/user/me/stretches/${props.id}`,{}, config)
             .then(response => {
               setIsFavorite(true);
             })

@@ -20,7 +20,7 @@ const ContactForm = () => {
             message
         };
 
-        axios.post('http://localhost:3001/contact', formData)
+        axios.post('http://45.82.75.212:3001/contact', formData)
             .then(response => response.data)
             .then(data => {
                 if (data === 'success') {
