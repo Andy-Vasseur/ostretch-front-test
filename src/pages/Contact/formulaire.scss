@@ -1,91 +1,73 @@
-.contactez-nous {
-  text-align: center;
-  width: 700px;
-  border-radius: 10px;
-  padding: 0 50px 0 50px;
+@import '../../styles/vars';
+
+.Form {
   margin: auto;
-  margin-top: 2.5%;
+  margin-top: 4%;
+  padding: 0 50px 0 50px;
+  width: 700px;
+  border: 3px solid white;
+  border-radius: 43px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: white;
 
-  & h1 {
-    color: black;
-  }
-
-  & .contactez-nous h1 {
-    font-weight: 500;
-  }
-
-  & .contactez-nous p {
-    font-weight: 300;
-  }
-
-  & form div {
-    width: 100%;
+  & div {
     display: flex;
     flex-direction: column;
+    width: 100%;
     min-height: 83px;
     margin-top: 25px;
+
+    & label {
+      margin-bottom: 7px;
+      font-weight: 600;
+    }
+
+    & input {
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      height: 50px;
+      font-size: 16px;
+      font-weight: 500;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      font-family: 'Poppins', sans-serif;
+      background: rgb(234,226,247);
+      background: linear-gradient(90deg, rgb(240, 233, 252) 0%, rgb(250, 239, 224) 100%);
+    }
+
+    & textarea {
+      padding: 15px 0 0 10px;
+      border: none;
+      border-radius: 10px;
+      height: 50px;
+      font-size: 16px;
+      font-weight: 500;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      font-family: 'Poppins', sans-serif;
+      background: rgb(234,226,247);
+      background: linear-gradient(90deg, rgb(240, 233, 252) 0%, rgb(250, 239, 224) 100%);
+    }
   }
 
-  & form div label {
-    margin-bottom: 7px;
-    font-weight: 600;
-  }
-
-  & form div input,
-  form div select,
-  form div textarea {
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 500;
-    box-shadow: 0px 2px 2px 0px rgba(255, 255, 255, 0.25);
-    font-family: 'Poppins', sans-serif;
-  }
-
-  & form div input,
-  form div select {
-    height: 50px;
-    padding-left: 10px;
-  }
-
-  & form div textarea {
-    height: 150px;
-    padding: 15px 0px 0px 10px;
-  }
-
-  & form div input::placeholder,
-  form div textarea::placeholder {
-    color: rgb(0, 0, 0);
-  }
-
-  & form div select:invalid {
-    color: black;
-  }
-
-  & form div select option {
-    background: white;
-  }
-
-  & form div:last-child {
-    align-items: center;
-    margin-top: 20px;
-  }
-
-  & form button {
+  & button {
+    cursor: pointer;
+    margin: auto;
     margin-top: 10px;
     width: 450px;
-    max-width: 500px;
     height: 40px;
+    max-width: 500px;
+    border: none;
+    border-radius: 12px;
     font-weight: 700;
     font-size: 16px;
-    background: white;
-    border: rgba(48, 48, 48, 0.5) solid 1px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25);
-  }
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background: rgb(234,226,247);
+    background: linear-gradient(90deg, rgb(240, 233, 252) 0%, rgb(250, 239, 224) 100%);
+    transition: $transition-300;
 
-  & label {
-    color: black;
-    text-align: center;
+    &:hover {
+      transform: translateY(3px) scale(1.1);
+    }
   }
 }

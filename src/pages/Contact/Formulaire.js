@@ -3,7 +3,7 @@ import axios from 'axios';
 import './formulaire.scss';
 import { useState, useRef } from 'react';
 
-const ContactForm = () => {
+const Formulaire = () => {
     const contactFormRef = useRef(null);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -36,14 +36,14 @@ const ContactForm = () => {
     };
 
     return (
-        <form ref={contactFormRef} className="form__contact" onSubmit={handleSubmit}>
+        <form ref={contactFormRef} className="Form" onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="name">Votre nom</label>
-                <input type="text" id="name" placeholder="Votre nom/prénom ici" value={name} onChange={event => setName(event.target.value)} />
+                <input type="text" id="name" placeholder="Votre nom / prénom ici" value={name} onChange={event => setName(event.target.value)} />
             </div>
             <div>
                 <label htmlFor="email">Votre e-mail</label>
-                <input type="email" id="email" placeholder="Votreadresse@mail.com" value={email} onChange={event => setEmail(event.target.value)} />
+                <input type="email" id="email" placeholder="Votre adresse email" value={email} onChange={event => setEmail(event.target.value)} />
             </div>
             <div>
                 <label htmlFor="subject">Motif de votre contact</label>
@@ -57,17 +57,6 @@ const ContactForm = () => {
                 <button type="submit">Envoyer mon message</button>
             </div>
         </form>
-    );
-};
-
-const Formulaire = () => {
-    return (
-        <>
-            <ContactForm />
-            <div className="contactez-nous">
-                <h1>Contactez-nous ici.</h1>
-            </div>
-        </>
     );
 };
 
