@@ -20,7 +20,7 @@ const ContactForm = () => {
             message: message.value
         }
     
-        fetch('http://localhost:3001/contact', {
+        fetch('http://45.82.75.212:3001/contact', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
