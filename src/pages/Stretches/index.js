@@ -18,7 +18,7 @@ export default class Stretches extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://45.82.75.212:3001/stretches')
+        axios.get(`${process.env.REACT_APP_BASE_URL}/stretches`)
             .then(response => {
                 let stretches = response.data;
                 this.setState({ stretches })
