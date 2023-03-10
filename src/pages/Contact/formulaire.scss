@@ -28,12 +28,10 @@
       border: none;
       border-radius: 10px;
       height: 50px;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 500;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       font-family: 'Poppins', sans-serif;
-      background: rgb(234,226,247);
-      background: linear-gradient(90deg, rgb(240, 233, 252) 0%, rgb(250, 239, 224) 100%);
     }
 
     & textarea {
@@ -41,12 +39,10 @@
       border: none;
       border-radius: 10px;
       height: 50px;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 500;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       font-family: 'Poppins', sans-serif;
-      background: rgb(234,226,247);
-      background: linear-gradient(90deg, rgb(240, 233, 252) 0%, rgb(250, 239, 224) 100%);
     }
   }
 
@@ -57,13 +53,13 @@
     width: 450px;
     height: 40px;
     max-width: 500px;
+    color: white;
     border: none;
     border-radius: 12px;
     font-weight: 700;
     font-size: 16px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background: rgb(234,226,247);
-    background: linear-gradient(90deg, rgb(240, 233, 252) 0%, rgb(250, 239, 224) 100%);
+    background-color: $purple-color;
     transition: $transition-300;
 
     &:hover {

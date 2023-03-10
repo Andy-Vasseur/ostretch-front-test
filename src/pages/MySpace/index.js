@@ -16,7 +16,7 @@ const MySpace = ({user, setUser}) => {
 
     return (
         <div className='MySpace'>
-            <div className="bienvenue">Bienvenue {user.username}</div>
+            <h1>Bienvenue {user.username}</h1>
             <div className="box">
                 
                 <h2>Mes informations</h2>

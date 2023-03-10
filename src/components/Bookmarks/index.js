@@ -2,17 +2,18 @@ import Card from '../Card'
 import axios from 'axios';
 import plus from '../../assets/img/add-icon.png'
 import { useState, useEffect } from 'react';
+import { AiOutlineDelete } from 'react-icons/ai';
 
 const Bookmarks = () => {
-    const [bookmarks, setBookmarks] = useState([]);
-    const token = localStorage.getItem('token');
+  const [bookmarks, setBookmarks] = useState([]);
+  const token = localStorage.getItem('token');
 
     useEffect(()=>{
         const config = {
             headers: { Authorization: `Bearer ${token}` }
           };
       
-          axios.get(`http://45.82.75.212:3001/user/me/stretches`, config)
+          axios.get(`${process.env.REACT_APP_BASE_URL}/user/me/stretches`, config)
             .then(response => {
               setBookmarks(response.data);
             })
@@ -26,7 +27,7 @@ const Bookmarks = () => {
             const config = {
                 headers: { Authorization: `Bearer ${token}` }
               };
-              axios.delete(`http://45.82.75.212:3001/user/me/stretches/${id}`, config)
+              axios.delete(`${process.env.REACT_APP_BASE_URL}/user/me/stretches/${id}`, config)
               .then(response => {
                 setBookmarks(bookmarks.filter(bookmark => bookmark.id !== id));
               })
@@ -40,26 +41,26 @@ const Bookmarks = () => {
         <div className="bookmarks-container">
         <div className='bookmarks-cards'>
         {
-            bookmarks.map((stretch) => (
+          bookmarks.map((stretch) => (
             <div key={stretch.id} className='card-container'>
-            <Card
-            title={stretch.title}
-            description={stretch.description}
-            img={stretch.main_image}
-            alt={stretch.title}
-            hover={stretch.title}
-            key={stretch.id}
-            link={stretch.id}
+              <Card
+              title={stretch.title}
+              description={stretch.description}
+              img={stretch.main_image}
+              alt={stretch.title}
+              hover={stretch.title}
+              key={stretch.id}
+              link={stretch.id}
             />
-            <button className='delete-btn' onClick={()=>handleDelete(stretch.id)}>X</button>
+            <button className='delete-btn' onClick={()=>handleDelete(stretch.id)}><AiOutlineDelete /></button>
             </div>
-         ))
+          ))
         }
-        <Card title="Ajouter un favoris" img={plus} link={""}/>
+        <Card title="Ajouter un favoris" img={plus} link={""} />
         </div>
 
-   </div>
-    )
+    </div>
+  )
 }
 
 export default Bookmarks;

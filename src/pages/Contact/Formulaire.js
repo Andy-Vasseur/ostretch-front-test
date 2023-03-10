@@ -20,7 +20,7 @@ const Formulaire = () => {
             message
         };
 
-        axios.post('http://45.82.75.212:3001/contact', formData)
+        axios.post(`${process.env.REACT_APP_BASE_URL}/contact`, formData)
             .then(response => response.data)
             .then(data => {
                 if (data === 'success') {
@@ -59,5 +59,6 @@ const Formulaire = () => {
         </form>
     );
 };
+
 
 export default Formulaire;
