@@ -19,7 +19,7 @@ const Footer = () => {
 
             <div className='footer-text'>
                 <p>
-                    Tout le monde connaît les étirements mais ils sont trop souvent délaissés malgré leurs effets bénéfiques sur la récupération, la posture et la prévention des bleussures.
+                    Tout le monde connaît les étirements mais ils sont trop souvent délaissés malgré leurs effets bénéfiques sur la récupération, la posture et la prévention des blessures.
                 </p>
                 <p>
                     OStretch a pour but de vous aider à mieux comprendre les étirements et de vous proposer des séances d'étirements adaptées à vos besoins.

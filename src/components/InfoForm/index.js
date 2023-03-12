@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const InfoForm = ({user, setUser, setIsEditOpen}) => {
+const InfoForm = ({user, setUser, setIsEditOpen, setIsLogged}) => {
 
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
@@ -72,6 +72,7 @@ const InfoForm = ({user, setUser, setIsEditOpen}) => {
       axios.delete(`${process.env.REACT_APP_BASE_URL}/user/me`, config)
       .then(response => {
         setUser("");
+        setIsLogged(false);
         localStorage.clear();
         navigate("/signup");
       })

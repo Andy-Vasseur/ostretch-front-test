@@ -37,6 +37,7 @@ const Formulaire = () => {
 
     return (
         <form ref={contactFormRef} className="Form" onSubmit={handleSubmit}>
+            <p>Si vous souhaitez nous contacter remplissez le formulaire de contact ci-dessous, et nous répondrons au plus vite</p>
             <div>
                 <label htmlFor="name">Votre nom</label>
                 <input type="text" id="name" placeholder="Votre nom / prénom ici" value={name} onChange={event => setName(event.target.value)} />

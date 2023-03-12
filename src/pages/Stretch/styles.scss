@@ -40,20 +40,16 @@
 }
 .stretch-image-container{
     position: relative;
-
     width: 500px;
     height: 500px;
 }
 .fav-icon {
-
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-
     top: 10%;
     left: 0;
-
     margin-left: 1em;
     font-size: 1.8rem;
     filter: drop-shadow(0 0 3px rgba(0, 0, 0, 1));
@@ -67,5 +63,12 @@
     display: flex;
     margin-top: 30px;
     justify-content: space-between;
+}
 
+.infos-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }

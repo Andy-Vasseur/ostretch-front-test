@@ -40,9 +40,10 @@
                 text-align: center;
             }
             & .category {
+                margin-left: -2.3rem;
                 & ul {
                     margin: auto;
-                    padding: 0;
+                    padding-left: 0;
                     width: 280px;
                     grid-template-columns: 1fr;
                     grid-template-rows: repeat(2, 1fr);
@@ -106,6 +107,73 @@
             }
         }
     }
+
+    
+    #category-cards{
+        & .card{
+            width: 75px;
+            height: 125px;
+        }
+        
+    }
+    .legs-cards{
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        height:100%;
+        width: 100%;
+        margin: 0 auto;
+        gap: 25%;
+    }
+    .right-legs-cards{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-right: 1%;
+        justify-content: space-between;
+    }
+    .left-legs-cards{
+        margin-left: 1%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .head-cards{
+        position: absolute;
+        left: 5%;
+        top: -10%;
+        margin: 0;
+    }
+    .arm-cards{
+        position: absolute;
+        left: 5%;
+        top: -10%;
+        margin: 0;
+    }
+    .cheast-cards{
+        position: absolute;
+        right: 0;
+        margin-right: 0%;
+        height: 100%;
+        display: flex;
+        flex-direction:column;
+    }
+    .stomach-cards{
+        position: absolute;
+        margin-left: 1%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .shoulder-cards{
+        position: absolute;
+        left: 53%;
+        top: -10%;
+    }
+    
 
     .login {
         

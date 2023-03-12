@@ -79,17 +79,7 @@
         border: 1px solid #9c5fff30;
         border-radius: 20px;
     }
-    .modify-btn {
-        border-radius: 20px;
-        color: white;
-        background-color: #9C5FFF;
-        border: none;
-        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);   
-        padding: 15px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        cursor: pointer;
-    }
+
     .delete-account-btn {
         border-radius: 20px;
         color: white;
@@ -124,3 +114,14 @@
     background-color: #9C5FFF;
     cursor: pointer;
 }
+    .modify-btn {
+        border-radius: 20px;
+        color: white;
+        background-color: #9C5FFF;
+        border: none;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);   
+        padding: 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }

@@ -5,9 +5,10 @@ import axios from 'axios';
 const StretchForm = ({stretch, setStretch, id, setOnEdit}) => {
     const [userValue, setUserValue] = useState({
         title: "",
+        main_image: "",
         description_content: ""
     });
-
+console.log(userValue);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -19,6 +20,10 @@ const StretchForm = ({stretch, setStretch, id, setOnEdit}) => {
         
         if (userValue.description_content !== "") {
             updatedData.description_content = userValue.description_content;
+          }
+
+          if (userValue.main_image !== "") {
+            updatedData.main_image = userValue.main_image;
           }
 
         const token = localStorage.getItem('token'); // Récupérer le jeton d'authentification stocké dans le stockage local
@@ -64,11 +69,14 @@ const StretchForm = ({stretch, setStretch, id, setOnEdit}) => {
           Nom de l'étirement:
       </p>
         <input type="text" name="title" value={userValue.title} className='infos' placeholder={stretch.title} onChange={handleChange}/> 
-      
+        <p>
+          URL de la photo:
+      </p>
+        <input type="text" name="main_image" value={userValue.main_image} className='infos' placeholder="https://" onChange={handleChange}/> 
         <p>
           Description:
         </p>
-        <textarea rows="5" cols="33" type="text" name="description_content" value={userValue.desciption_content} className='infos'  placeholder={stretch.description_content} onChange={handleChange}/>
+        <textarea rows="5" cols="45" type="text" name="description_content" value={userValue.description_content} className='infos'  placeholder={stretch.description_content} onChange={handleChange}/>
 
         <button className="modify-btn" >Enregistrer</button>
     </form> 

@@ -69,34 +69,39 @@ const HumanBody = () => {
     return (
         <div className='main-body'>
             
-            { isHeadOpen ? (<div className='head-cards'>
-                <Card title="Cou" link=" "/>
+            { isHeadOpen ? (<div className='head-cards' id='category-cards'>
+                <Card title="Cou" link="#Cou" img="https://i.ibb.co/SP7PD5V/6.webp" />
             </div>) : null }
 
-            { isShoulderOpen ? (<div className='shoulder-cards'>
-                <Card title="Bras" link=" "/>
+            { isShoulderOpen ? (<div className='shoulder-cards' id='category-cards'>
+                <Card title="Bras" link="#Bras" img="https://i.ibb.co/JsnqQLP/7.webp"/>
             </div>) : null }
 
-            { isArmOpen ? (<div className='arm-cards'>
-                <Card title="Avant-Bras" link=" "/>
+            { isArmOpen ? (<div className='arm-cards' id='category-cards'>
+                <Card title="Avant-Bras" link="#Avant-Bras" img="https://i.ibb.co/sHmyLHh/8.webp"/>
             </div>) : null }
             
-            { isCheastOpen ? (<div className='cheast-cards'>
-                <Card title="Poitrine" link=" "/>
-                <Card title="Dos" link=" "/>
+            { isCheastOpen ? (<div className='cheast-cards' id='category-cards'>
+                <Card title="Poitrine" link="#Poitrine" img="https://i.ibb.co/mCZJnyZ/1.webp"/>
+                <Card title="Dos" link="#Dos" img="https://i.ibb.co/pXnyyfr/10.webp"/>
             </div>) : null }
 
-            { isStomachOpen ? (<div className='stomach-cards'>
-                <Card title="Ventre" link=" "/>
-                <Card title="Hanche" link=" "/>
+            { isStomachOpen ? (<div className='stomach-cards' id='category-cards'>
+                <Card title="Ventre" link="#Ventre" img="https://i.ibb.co/V3L3JRJ/5.jpg"/>
+                <Card title="Hanche" link="#Hanche" img="https://i.ibb.co/2MBwPNC/9.webp"/>
             </div>) : null }
 
-            { isLegsOpen ? (<div className='legs-cards'>
-                <Card title="Fessier" link=" "/>
-                <Card title="Cuisse" link=" "/>
-                <Card title="Jambe" link=" "/>
-                <Card title="Pied" link=" "/>
-            </div>) : null }
+            { isLegsOpen ? (<div className='legs-cards' id='category-cards'>
+                <div className='left-legs-cards'>
+                <Card title="Fessier" link="#Fessier" img="https://i.ibb.co/ZNVgwzH/douleur-a-la-fesse-et-osteopathie.webp"/>
+                <Card title="Cuisse" link="#Cuisse" img="https://i.ibb.co/WxvLmgL/2.jpg"/>
+                </div>
+                <div className='right-legs-cards'>
+                <Card title="Jambe" link="#Jambe" img="https://i.ibb.co/bX8q12n/3.webp"/>
+                <Card title="Pied" link="#Pied" img="https://i.ibb.co/3sLPHjd/4.jpg"/>
+                </div>
+                </div> ) : null }
+
 
 
         <div className='HumanBody'>
@@ -110,6 +115,8 @@ const HumanBody = () => {
                 <svg data-position="hands" className="hands" xmlns="http://www.w3.org/2000/svg" width="205" height="38.938" viewBox="0 0 205 38.938"><path d="M21.255-.002l2.88 6.9 8.412 1.335.664 12.458-4.427 17.8-2.878-.22 2.8-11.847-2.99-.084-4.676 12.6-3.544-.446 4.4-12.736-3.072-.584-5.978 13.543-4.428-.445 6.088-14.1-2.1-1.25-7.528 12.012-3.764-.445L12.4 12.9l-1.107-1.78L.665 15.57 0 13.124l8.635-7.786zm162.49 0l-2.88 6.9-8.412 1.335-.664 12.458 4.427 17.8 2.878-.22-2.8-11.847 2.99-.084 4.676 12.6 3.544-.446-4.4-12.736 3.072-.584 5.978 13.543 4.428-.445-6.088-14.1 2.1-1.25 7.528 12.012 3.764-.445L192.6 12.9l1.107-1.78 10.628 4.45.665-2.447-8.635-7.786z" /></svg>
             </div>
         </div>
+
+
         </div>
     );
 };
